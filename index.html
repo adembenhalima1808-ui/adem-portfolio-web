@@ -7,17 +7,32 @@
         margin: 0; 
         padding: 0; 
         height: 100%; 
-        overflow: hidden; /* Prevents scrolling */
         background-color: #0A0807; 
+        overflow: hidden;
       }
+      /* The container strictly defines the edge of your screen */
+      .iframe-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden; 
+      }
+      /* The iframe is pulled off-screen slightly in every direction */
       iframe { 
-        width: 100%; 
-        height: calc(100% + 50px); /* Pushes the 50px white footer off the bottom of the screen */
+        position: absolute;
+        top: -4px;  /* Pulls the white top edge off-screen */
+        left: -4px; /* Pulls the white left edge off-screen */
+        width: calc(100% + 8px); /* Stretches past the right edge (4px left + 4px right) */
+        height: calc(100% + 64px); /* Stretches past the bottom footer (4px top + 60px bottom) */
         border: none; 
       }
     </style>
   </head>
   <body>
-    <iframe src="https://adembh.streamlit.app/?embed=true&embed_options=dark_theme"></iframe>
+    <div class="iframe-wrapper">
+      <iframe src="https://adembh.streamlit.app/?embed=true&embed_options=dark_theme"></iframe>
+    </div>
   </body>
 </html>
