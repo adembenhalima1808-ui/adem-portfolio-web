@@ -4,35 +4,40 @@
     <title>Adem Ben Halima | Student</title>
     <style>
       body, html { 
-        margin: 0; 
-        padding: 0; 
-        height: 100%; 
-        background-color: #0A0807; 
-        overflow: hidden;
+        margin: 0 !important; 
+        padding: 0 !important; 
+        height: 100% !important; 
+        background-color: #0A0807 !important; 
+        overflow: hidden !important;
       }
-      /* The container strictly defines the edge of your screen */
       .iframe-wrapper {
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
+        background-color: #0A0807;
         overflow: hidden; 
       }
-      /* The iframe is pulled off-screen slightly in every direction */
+      /* Increased the crop size and added aggressive CSS resets */
       iframe { 
         position: absolute;
-        top: -4px;  /* Pulls the white top edge off-screen */
-        left: -4px; /* Pulls the white left edge off-screen */
-        width: calc(100% + 8px); /* Stretches past the right edge (4px left + 4px right) */
-        height: calc(100% + 64px); /* Stretches past the bottom footer (4px top + 60px bottom) */
-        border: none; 
+        display: block;
+        top: -10px;  
+        left: -10px; 
+        width: calc(100% + 20px); 
+        height: calc(100% + 80px); 
+        border: 0 !important; 
+        outline: none !important;
+        box-shadow: none !important;
+        background-color: #0A0807 !important;
       }
     </style>
   </head>
   <body>
     <div class="iframe-wrapper">
-      <iframe src="https://adembh.streamlit.app/?embed=true&embed_options=dark_theme"></iframe>
+      <!-- Added allowtransparency and explicit frame styling -->
+      <iframe src="https://adembh.streamlit.app/?embed=true&embed_options=dark_theme" allowtransparency="true" frameborder="0" marginheight="0" marginwidth="0"></iframe>
     </div>
   </body>
 </html>
